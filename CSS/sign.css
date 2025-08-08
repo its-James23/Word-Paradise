@@ -1,0 +1,33 @@
+#back{
+    background: url('../IMG/ChatGPT\ Image\ Aug\ 7\,\ 2025\,\ 04_49_40\ PM.png');
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+#back::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+#blue {
+  background-color: blue;
+  border: 2px solid blue;
+  transition:box-shadow ease 0.3s;
+  color: white;
+}
+#blue:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 5px 11px rgba(0, 0, 255, 0.3);
+}
+.request {
+  padding: 0.4rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  width: 6.9rem;
+  border-radius: 3px;
+  margin-left: 13px;
+}
