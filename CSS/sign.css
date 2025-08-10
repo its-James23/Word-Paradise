@@ -1,5 +1,5 @@
 #back{
-    background: url('../IMG/ChatGPT\ Image\ Aug\ 7\,\ 2025\,\ 04_49_40\ PM.png');
+    background-image: url(../IMG/ChatGPT\ Image\ Aug\ 7\,\ 2025\,\ 04_49_40\ PM.png);
     background-position: center;
     background-size: cover;
     position: relative;
@@ -30,4 +30,9 @@
   width: 6.9rem;
   border-radius: 3px;
   margin-left: 13px;
+}
+input{
+  border: none;
+  border-bottom: 2px solid #ccc;
+  display: block;
 }
