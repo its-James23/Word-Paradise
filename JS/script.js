@@ -21,12 +21,12 @@ function fetchBook() {
           book.formats["text/html; charset=utf-8"] ||
           book.formats["application/epub+zip"] ||
           book.formats["text/plain; charset=utf-8"];
-        aDiv.setAttribute("class", "row justify-content-center");
+        aDiv.setAttribute("class", "row justify-content-around align-ites-center");
         aDiv.innerHTML = `
-                    <div class="col-3">
+                    <div class="col-4">
                         <img src="${imgUrl}" class="img-fluid" alt="${book.title}">
                     </div>
-                    <div class="col-5">
+                    <div class="col-6">
                         <h2 class="text-secondary fw-medium">${book.title}</h2>
                         <h5 class="text-muted">${authors}</h5>
                         <ul class="list-unstyled">${li}</ul>

@@ -6,6 +6,15 @@
   border-radius: 3px;
   margin-left: 13px;
 }
+footer{
+    background: linear-gradient(135deg, #1e3c72, #2a5398);
+    color: aliceblue;
+    padding: 9.8px 0;
+    display: flex;
+    /* flex-direction: row; */
+    justify-content: center;
+    align-items: center;
+}
 #hero{
     background: url('https://images.unsplash.com/photo-1512820790803-83ca734da794') center/cover no-repeat;
     border-radius: 10px;
