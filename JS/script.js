@@ -5,16 +5,16 @@ function fetchBook() {
   fetch(`https://gutendex.com/books?search=${searchValue}`)
     .then((response) => response.json())
     .then((data) => {
-        if (data.results.length === 0){
-            const p = document.createElement("p")
-            p.textContent = `No results found for ${searchValue}`;
-            p.className = "text-center text-danger"
-            bookResult.appendChild(p)
-        }
+      if (data.results.length === 0) {
+        const p = document.createElement("p");
+        p.textContent = `No results found for ${searchValue}`;
+        p.className = "text-center text-danger";
+        bookResult.appendChild(p);
+      }
       data.results.forEach((book) => {
         const imgUrl = `https://www.gutenberg.org/cache/epub/${book.id}/pg${book.id}.cover.medium.jpg`;
         let aDiv = document.createElement("div");
-        aDiv.style.margin = '20px'
+        aDiv.style.margin = "20px";
         let li = book.subjects.map((li) => `<li>${li}</li>`).join("");
         let authors = book.authors.map((li) => li.name).join(";");
         let url =
@@ -36,4 +36,8 @@ function fetchBook() {
         bookResult.appendChild(aDiv);
       });
     });
+}
+
+function openhere() {
+  window.open("sign-up.html", "_self");
 }

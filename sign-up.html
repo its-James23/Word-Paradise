@@ -15,6 +15,8 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
     />
     <link rel="stylesheet" href="./CSS/sign.css">
+    <link rel="stylesheet" href="./CSS/all.css">
+    <script type="module" src="./JS/fire.js"></script>
   </head>
   <body>
     <header class="py-3">
@@ -24,7 +26,7 @@
         data-bs-theme="light"
       >
         <div class="container-lg">
-          <a class="navbar-brand fw-semibold text-muted" href="#"
+          <a class="navbar-brand fw-semibold text-muted" href="./index.html"
             ><i class="bi bi-book-fill" style="font-size: 1.3rem"></i> Word
             Paradise</a
           >
@@ -42,10 +44,10 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                <a class="nav-link" aria-current="page" href="./index.html">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
+                <a class="nav-link" href="#">Discover</a>
               </li>
               <li>
                 <a class="nav-link" href="#">Disabled</a>
@@ -58,28 +60,67 @@
         </div>
       </nav>
     </header>
-    <section class="my-5 container-lg">
-        <div class="row justify-content-center align-items-center">
-            <div class="col-md-5 d-none d-md-block" id="back"></div>
-            <div class="col-md-5">
-                <form action="#">
-                    <div class="form-floating mb-2">
-                      <input type="text" name="username" id="username" placeholder="e.g John Star">
-                    </div>
-                    <div class="form-floating mb-2">
-                      <input type="email" name="mail" id="mail" placeholder="e.g johnstar@example.com">
-                    </div>
-                    <div class="form-floating mb-2">
-                      <input type="password" name="code" id="code" placeholder="e.g johnny123">
-                    </div>
-                </form>
+    <section class="my-5 container-lg p-3">
+      <div class="row justify-content-around align-items-center">
+        <div class="row justify-content-around align-items-center py-4 px-2 col-sm-7 col-md-10 shadow rounded" id="hold">
+          <div class="col-md-5 d-none d-md-block lola">
+            <div class="image-holder">
+              <div class="overlay"></div>
             </div>
+          </div>
+          <div class="col-md-5">
+            <form action="#">
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control" required id="name" placeholder="e.g John Star" />
+                <label for="name">Username</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input type="email" class="form-control" required id="mail" placeholder="e.g johnstar@examp.com" />
+                <label for="mail">Email Address</label>
+              </div>
+              <div class="form-floating jeep mb-3">
+                <input type="password" class="form-control" required id="code" placeholder="fegh23" />
+                <label for="code">Password</label>
+                <span role="button" id="change"><i class="bi bi-eye" id="icon" style="font-size: 1.2rem; color: #929da7;"></i></span>
+              </div>
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="listen" placeholder="goals" />
+                <label for="listen">Reading Goals*</label>
+              </div>
+              <div>
+                <p class="fw-bold text-muted">Select you Favourite Genre</p>
+                <input type="checkbox" name="sci-fi" id="sci-fi"> 
+                <label class="create" for="sci-fi">Sci-Fi</label>
+
+                <input type="checkbox" name="romance" id="romance">
+                <label class="create" for="romance">Romance</label>
+                
+                <input type="checkbox" name="fantasy" id="fantasy"> 
+                <label class="create" for="fantasy">Fantasy</label>
+
+                <input type="checkbox" name="mystery" id="mystery"> 
+                <label class="create" for="mystery">Mystery</label>
+
+                <input type="checkbox" name="other" id="other"> 
+                <label class="create" for="other">Other</label>
+
+                <input type="checkbox" name="drama" id="drama"> 
+                <label class="create" for="drama">Drama</label>
+              </div>
+              <div class="text-center">
+              <button type="submit" id="sub" class="btn btn-primary text-center w-50">Submit</button>
+              </div>
+            </form>
+          </div>
+          <p class="text-muted text-center mt-4" style="font-size: 12px;">* = Optional</p>
         </div>
+      </div>
     </section>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
       crossorigin="anonymous"
     ></script>
+    <script src="./JS/sign.js"></script> 
   </body>
 </html>

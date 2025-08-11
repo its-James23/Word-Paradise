@@ -1,0 +1,22 @@
+#navbarSupportedContent ul li{
+    position: relative;
+    display: block;
+    margin: 0 12px;
+}
+#navbarSupportedContent ul li a::after{
+    position: absolute;
+    content: "";
+    bottom: -2px;
+    height: 3px;
+    left: 0;
+    background-color: blue;
+    z-index: 45;
+    width: 0;
+    transition: width 0.3s ease;
+}
+#navbarSupportedContent ul li a:hover::after{
+   width: 100%;
+}
+#navbarSupportedContent ul li a.active::after{
+    width: 100%;
+}
