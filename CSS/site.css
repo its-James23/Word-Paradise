@@ -3,62 +3,101 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: #f5f5f5;
+  width: 100vw;
 }
 .book-container {
   perspective: 1000px;
 }
 .book {
-  width: 120px;
-  height: 160px;
+  width: 200px;
+  height: 300px;
   position: relative;
   transform-style: preserve-3d;
 }
 .page {
   width: 100%;
+  background: #fffdf7;
   height: 100%;
   position: absolute;
   top: 0;
+  padding: 20px;
   left: 0;
   transform-origin: center left;
-  border: 2px solid #ccc;
+  border: 2px solid #ebe3e3;
   color: black;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.08) 0%,
+      transparent 10%,
+      transparent 90%,
+      rgba(0, 0, 0, 0.08) 100%
+    ),
+    radial-gradient(circle, rgba(0, 0, 0, 0.02) 1px, transparent 1px);
+  background-size: 100% 100%, 4px 4px;
+
+  box-shadow: inset -10px 0 15px rgba(0, 0, 0, 0.1),
+    inset 10px 0 15px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.15);
   animation: flip 2s ease-in-out forwards;
+  display: flex;
+  justify-content: center;
+  text-shadow: 1px 1px 0 #fff, 2px 2px 4px rgba(0, 0, 0, 0.3);
+  align-items: center;
+  line-height: 1.4;
+  text-align: center;
+  font-family: "Sacramento", cursive;
+  font-size: 1.6rem;
+}
+.book::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 1%;
+  width: 4px;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.1);
+  transform: translateX(-50%);
+  z-index: 1;
 }
 .page-1 {
   animation-delay: 0s;
-  background: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+  color: #7b3f00;
 }
 .page-2 {
   animation-delay: 0.8s;
-  background: #f9f9f9;
+  z-index: 4;
+  color: #3a3a3a;
 }
 .page-3 {
   animation-delay: 1.8s;
-  background: #f5f5f5;
+  z-index: 3;
+  color: #444;
+
 }
 .page-4 {
   animation-delay: 2.8s;
-  background: #f0f0f0;
+  z-index: 2;
+  color: #005f73;
+
 }
 .page-5 {
   animation-delay: 3.8s;
-  background: #ebebeb;
+  z-index: 1;
+  color: #9a031e;
+}
+.page-6 {
+  color: #2d3142;
+  animation-delay: 4.8s;
 }
 @keyframes flip {
   0% {
     transform: rotateY(0deg);
   }
-  50%{
+  65% {
     color: transparent;
   }
   100% {
     transform: rotateY(-180deg);
     color: transparent;
+    z-index: 0;
   }
 }
