@@ -110,6 +110,7 @@
 }
 .lolao {
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   gap: 19px;
@@ -174,6 +175,10 @@ h6 {
 .hue:hover{
     transform: scale(1.02);
 }
+#tapu{
+  font-family: "Allura", cursive;
+  font-size: 1.6rem;
+}
 .inc{
     font-size: 16px;
 }
@@ -203,4 +208,13 @@ h6 {
     width: 180px;
     border-radius: 50%;
     background: rgba(255, 205, 86, 0.1);
+}
+.removed a{
+  text-decoration: none;
+  color: black;
+}
+#user-profile{
+  position: fixed;
+  top: 10%;
+  right: 30px;
 }

@@ -59,5 +59,14 @@ fetch("https://gutendex.com/books?page_size=76487")
     category3.forEach((c) => loadBook(fantasyBook, c));
   });
 let identifier = localStorage.getItem("username") || "User";
-const h2 = document.querySelector(".greet")
-h2.textContent = `Welcome ${identifier}`
+const h2 = document.querySelector(".greet");
+h2.textContent = `Welcome ${identifier}`;
+const toastTrigger = document.getElementById("liveToastBtn");
+const toastLiveExample = document.getElementById("liveToast");
+
+if (toastTrigger) {
+  const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample);
+  toastTrigger.addEventListener("click", () => {
+    toastBootstrap.show();
+  });
+}
