@@ -144,3 +144,12 @@ fetch("https://gutendex.com/books?sort=download_count")
       document.getElementById("lots").appendChild(absorb);
     });
   });
+  const categoryNames = [
+    "romance",
+    "fantasy",
+    "action",
+    "drama"
+  ]
+  const randomCategory = categoryNames[Math.floor(Math.random() * categoryNames.length)]
+  const aLink = document.getElementById("buster")
+  aLink.href = `../category.html?name=${randomCategory}`

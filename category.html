@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="./CSS/category.css">
+  </head>
+  <body>
+    <section class="my-4 d-flex justify-content-between flex-wrap align-items-center p-4">
+      <h1 class="display-3 text-secondary text-center" id="category-title"></h1>
+      <div class="filters">
+        <select id="popularity">
+          <option value="popular">Sort by Popular</option>
+          <option value="recent">Sort by Recent</option>
+        </select>
+        <select id="lang">
+          <option value="en">English</option>
+          <option value="fr">French</option>
+        </select>
+      </div>
+    </section>
+    <section class="my-5 container-lg">
+      <div id="book-container"></div>
+    </section>
+    <footer class="text-center" id="add">
+      <a
+        href=""
+        class="additional-links bg-light rounded-2 p-2 mx-2 text-decoration-none text-dark"
+        >Romance</a
+      >
+      <a
+        href=""
+        class="additional-links bg-light rounded-2 p-2 mx-2 text-decoration-none text-dark"
+        >Drama</a
+      >
+      <a
+        href=""
+        class="additional-links bg-light rounded-2 p-2 mx-2 text-decoration-none text-dark"
+        >Mystery</a
+      >
+      <a
+        href=""
+        class="additional-links bg-light rounded-2 p-2 mx-2 text-decoration-none text-dark"
+        >Action</a
+      >
+    </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
