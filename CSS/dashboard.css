@@ -3,7 +3,7 @@
   width: 100vw;
   height: 100vh;
   position: fixed;
-  background: rgba(255, 255, 255, 0.99);
+  background: linear-gradient(135deg, #001f54, #034078, #1282a2, #fcfefb);
   z-index: 20000;
   top: 0;
   gap: 12px;
@@ -115,6 +115,27 @@
   align-items: center;
   gap: 19px;
 }
+.icon-block{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.85rem;
+}
+.icon-summary{
+  display: none;
+  margin-top: 4px;
+  margin-right: auto;
+}
+@media (max-width: 768px){
+  .lolao{
+    flex-direction: column;
+    gap: 12px;
+  }
+  .icon-summary{
+    display: block;
+  }
+}
+
 .navbar-nav li i {
   color: #5a6f8c;
   font-size: 1.5rem;
@@ -217,4 +238,16 @@ h6 {
   position: fixed;
   top: 10%;
   right: 30px;
+}
+.profile-photo{
+  height: 45px;
+  border-radius: 50%;
+}
+.cleared{
+  font-size: 13.6px;
+  text-decoration: none;
+  color: rgb(70, 70, 70);
+}
+.heroine{
+  font-family: "Parisienne", cursive;
 }

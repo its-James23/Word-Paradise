@@ -15,7 +15,7 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
     />
     <link
-      href="https://fonts.googleapis.com/css2?family=Chewy&family=Sacramento&family=Amatic+SC&family=Allura&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Chewy&family=Sacramento&family=Amatic+SC&family=Allura&family=Parisienne&display=swap"
       rel="stylesheet"
     />
 
@@ -36,38 +36,64 @@
     <header class="py-3">
       <nav class="navbar navbar-expand-lg p-2">
         <div class="container-lg">
+          <!-- <a href="#" class="navbar-brand">Your Realm</a> -->
           <button
             class="navbar-toggler"
             type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarTogglerDemo02"
-            aria-controls="navbarTogglerDemo02"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasNavbar"
+            aria-controls="offcanvasNavbar"
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-            <form class="d-flex me-auto" role="search">
-              <input
-                class="form-control me-2"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-              />
-              <button class="btn btn-outline-info" type="submit">Search</button>
-            </form>
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 lolao">
-              <li class="nav-item">
-                <i class="bi bi-person-circle" role="button"  id="liveToastBtn"></i>
-              </li>
-              <li class="nav-item">
-                <i class="bi bi-bell-fill" role="button"></i>
-              </li>
-              <li class="nav-item">
-                <i class="bi bi-moon-fill" role="button"></i>
-              </li>
-            </ul>
+          <div
+            class="offcanvas offcanvas-end"
+            tabindex="-1"
+            id="offcanvasNavbar"
+            aria-labelledby="offcanvasNavbarLabel"
+          >
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+              <button
+                class="btn-close"
+                type="button"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="offcanvas-body">
+              <!-- <form class="d-flex me-auto" role="search">
+                <input
+                  class="form-control me-2"
+                  type="search"
+                  placeholder="Search"
+                  aria-label="Search"
+                />
+                <button class="btn btn-outline-info" onclick="fetchBook()" type="submit">
+                  Search
+                </button>
+              </form> -->
+              <ul class="navbar-nav ms-auto mb-2 mb-lg-0 lolao">
+                <li class="nav-item icon-block">
+                  <i
+                    class="bi bi-person-circle"
+                    role="button"
+                    id="liveToastBtn"
+                  ></i>
+                  <span class="icon-summary">Profile</span>
+                </li>
+                <li class="nav-item icon-block">
+                  <i class="bi bi-bell-fill" role="button" id="onoff"></i>
+                  <span class="icon-summary">Notifications</span>
+                </li>
+                <li class="nav-item icon-block">
+                  <i class="bi bi-moon-fill" role="button"></i>
+                  <span class="icon-summary">Dark mode</span>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </nav>
@@ -77,24 +103,51 @@
         <div class="row align-items-center">
           <div class="col-lg-6 mb-4 mb-lg-0">
             <h1 class="greet"></h1>
-            <p class="lead text-muted">Ready to begin your Reading Goal</p>
+            <p class="lead text-muted">Ready to achieve your Reading Goal</p>
             <div id="current-read" class="card shadow-sm border-0"></div>
           </div>
           <div class="col-lg-6">
             <div class="mb-3 hue p-3 rounded bg-light shadow-sm">
-              <h4 class="text-muted mb-1">Quote Of the Day 📖</h4>
-              <p>Not all those who wonder are lost</p>
+              <h4 class="text-muted mb-2">Quote Of the Day 📖</h4>
+              <p id="quotes"></p>
             </div>
             <div class="mb-3 hue p-3 rounded bg-light shadow-sm">
               <h5 class="mb-1 inc">New From Your Favorite Genre</h5>
-              <ul id="genre-books" class="mb-0 small"></ul>
+              <div id="genre-books" class="mb-0 small"></div>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <section class="my-5 py-3 container-lg">
-      <h2 class="text-secondary text-center">Explore Our Categories</h2>
+    <section class="my-5 py-3 container-lg" id="eras">
+      <h2 class="text-secondary text-center">Explore Other Categories</h2>
+      <h3 class="hot text-muted my-4">Popular Choices</h3>
+      <!-- <div id="lots"></div> -->
+      <div
+        id="carouselExampleAutoplaying"
+        class="carousel slide mb-4"
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-inner" id="lots"></div>
+        <button
+          class="carousel-control-prev kelo"
+          type="button"
+          data-bs-target="#carouselExampleAutoplaying"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next kelo"
+          type="button"
+          data-bs-target="#carouselExampleAutoplaying"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
       <div>
         <h3>Romance 💘</h3>
         <div class="category rom"></div>
@@ -132,17 +185,33 @@
         aria-atomic="true"
       >
         <div class="toast-header">
-          <img src="..." class="rounded me-2" alt="..." />
-          <strong class="me-auto">Bootstrap</strong>
-          <small>11 mins ago</small>
+          <!-- <small>11 mins ago</small> -->
           <button
             type="button"
-            class="btn-close"
+            class="btn-close ms-auto"
             data-bs-dismiss="toast"
             aria-label="Close"
           ></button>
         </div>
-        <div class="toast-body">Hello, world! This is a toast message.</div>
+        <div class="toast-body">
+          <div class="text-center">
+            <img
+              src="./IMG/ChatGPT Image Aug 7, 2025, 04_49_40 PM.png"
+              class="profile-photo me-2"
+              alt="..."
+            />
+            <p>
+              <strong class="me-auto" id="profile"></strong>
+              <i class="bi bi-pencil" role="button"></i>
+            </p>
+          </div>
+          <p id="details1" class="text-muted text-center">hello</p>
+          <p id="details" class="text-muted text-center"></p>
+          <hr />
+          <a href="./sign-up.html" class="cleared" onclick="replaceData()"
+            ><i class="bi bi-box-arrow-left"></i> Log Out</a
+          >
+        </div>
       </div>
     </div>
     <script
