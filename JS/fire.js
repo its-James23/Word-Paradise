@@ -27,30 +27,31 @@ input.addEventListener("submit", function (event) {
   }
   const email = document.getElementById("mail").value;
   const password = document.getElementById("code").value;
-  const user = document.getElementById("name").value;
+  const username = document.getElementById("name").value;
   const genres = [];
   const checkedBox = document.querySelectorAll(
     'input[type="checkbox"]:checked'
   );
   checkedBox.forEach((checkboxes) => {
-    genres.push(checkboxes);
+    genres.push(checkboxes.value);
   });
-  localStorage.setItem("genres", JSON.stringify(genres));
-  localStorage.setItem("username", user);
-  localStorage.setItem("mail", email);
-
+  
   createUserWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
-      // Signed up
-      const user = userCredential.user;
-      console.log("Created user");
-      // ...
-    })
-    .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      console.log(error);
-      // ..
-    });
+  .then((userCredential) => {
+    // Signed up
+    const user = userCredential.user;
+    console.log("Created user");
+    // ...
+    localStorage.setItem("genres", JSON.stringify(genres));
+    localStorage.setItem("username", username);
+    localStorage.setItem("mail", email);
+    window.open("dashboard.html", "_self")
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    console.log(error);
+    // ..
+  });
 });
 

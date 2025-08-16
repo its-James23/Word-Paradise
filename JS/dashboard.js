@@ -12,9 +12,18 @@ window.addEventListener("load", function () {
 const category1 = document.querySelectorAll(".rom");
 const category2 = document.querySelectorAll(".dram");
 const category3 = document.querySelectorAll(".fan");
+const faveGenres = JSON.parse(localStorage.getItem("genres") || "[]");
 fetch("https://gutendex.com/books?page_size=76487")
   .then((response) => response.json())
   .then((data) => {
+    const filteredFaves = faveGenres.flatMap(book => {
+      return data.results.filter(aGenre =>
+        aGenre.subjects.some(one => 
+           one.toLowerCase().includes(book.toLowerCase())
+        )
+      ).slice(0, 1)
+    })
+    loadGenres(filteredFaves)
     const romanceBook = data.results
       .filter((book) =>
         book.subjects.some((one) => {
@@ -57,6 +66,14 @@ fetch("https://gutendex.com/books?page_size=76487")
     category1.forEach((c) => loadBook(romanceBook, c));
     category2.forEach((c) => loadBook(dramaBook, c));
     category3.forEach((c) => loadBook(fantasyBook, c));
+    function loadGenres(favorites){
+      favorites.forEach(oneBook =>{
+        let span = document.createElement("span")
+        span.className = "badge bg-light shadow-sm p-3 text-dark kool-aid"
+        span.innerText = oneBook.title
+        document.getElementById("genre-books").appendChild(span)
+      })
+    }
   });
 let identifier = localStorage.getItem("username") || "User";
 let sendTo = localStorage.getItem("mail") || "name@example.com";

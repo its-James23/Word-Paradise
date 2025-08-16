@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Browse our Categories</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -17,48 +17,52 @@
     <link rel="stylesheet" href="./CSS/category.css">
   </head>
   <body>
-    <section class="my-4 d-flex justify-content-between flex-wrap align-items-center p-4">
-      <h1 class="display-3 text-secondary text-center" id="category-title"></h1>
-      <div class="filters">
-        <select id="popularity">
-          <option value="popular">Sort by Popular</option>
-          <option value="recent">Sort by Recent</option>
-        </select>
-        <select id="lang">
-          <option value="en">English</option>
-          <option value="fr">French</option>
-        </select>
+    <header class="py-3 my-4 container-lg">
+      <div class="row justify-content-between align-items-center">
+        <div class="col-md-3 text-center text-md-start order-2 order-md-1">
+          <h1
+            class="display-1 fw-bold text-secondary"
+            id="category-heading"
+          ></h1>
+        </div>
+        <div class="col-md-6 d-flex order-1 order-md-2" id="figure-container">
+          <figure class="bg-light text-center greater">
+            <img src="./IMG/ChatGPT Image Aug 7, 2025, 04_49_40 PM.png" class="figmage" alt="image">
+            <figcaption class="cps"><a href="./category.html?name=romance">Romance</a></figcaption>
+          </figure>
+          <figure class="bg-light text-center greater">
+            <img src="./IMG/ChatGPT Image Aug 7, 2025, 04_49_40 PM.png" class="figmage" alt="image">
+            <figcaption class="cps"><a href="./category.html?name=action">Action</a></figcaption>
+          </figure>
+          <figure class="bg-light text-center greater">
+            <img src="./IMG/ChatGPT Image Aug 7, 2025, 04_49_40 PM.png" class="figmage" alt="image">
+            <figcaption class="cps"><a href="./category.html?name=fantasy">Fantasy</a></figcaption>
+          </figure>
+          <figure class="bg-light text-center greater">
+            <img src="./IMG/ChatGPT Image Aug 7, 2025, 04_49_40 PM.png" class="figmage" alt="image">
+            <figcaption class="cps"><a href="./category.html?name=fiction">Fiction</a></figcaption>
+          </figure>
+          <figure class="bg-light text-center greater">
+            <img src="./IMG/ChatGPT Image Aug 7, 2025, 04_49_40 PM.png" class="figmage" alt="image">
+            <figcaption class="cps"><a href="./category.html?name=mystery">Mystery</a></figcaption>
+          </figure>
+          <figure class="bg-light text-center greater">
+            <img src="./IMG/ChatGPT Image Aug 7, 2025, 04_49_40 PM.png" class="figmage" alt="image">
+            <figcaption class="cps"><a href="./category.html?name=women">Drama</a></figcaption>
+          </figure>
+        </div>
+      </div>
+    </header>
+    <section class="my-5 container-xl">
+      <div class="p-3" id="commendations">
+
       </div>
     </section>
-    <section class="my-5 container-lg">
-      <div id="book-container"></div>
-    </section>
-    <footer class="text-center" id="add">
-      <a
-        href=""
-        class="additional-links bg-light rounded-2 p-2 mx-2 text-decoration-none text-dark"
-        >Romance</a
-      >
-      <a
-        href=""
-        class="additional-links bg-light rounded-2 p-2 mx-2 text-decoration-none text-dark"
-        >Drama</a
-      >
-      <a
-        href=""
-        class="additional-links bg-light rounded-2 p-2 mx-2 text-decoration-none text-dark"
-        >Mystery</a
-      >
-      <a
-        href=""
-        class="additional-links bg-light rounded-2 p-2 mx-2 text-decoration-none text-dark"
-        >Action</a
-      >
-    </footer>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
       crossorigin="anonymous"
     ></script>
+    <script src="./JS/category.js"></script>
   </body>
 </html>

@@ -1,22 +1,62 @@
-#book-container{
+#figure-container {
+  gap: 12px;
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+  scroll-behavior: smooth;
+  scroll-padding-left: 0;
+}
+#figure-container figure:first-child {
+  scroll-snap-align: start;
+}
+.figmage {
+  width: 100%;
+  position: relative;
+}
+
+#figure-container figure {
+    position: relative;
+    z-index: 2;
+    flex: 0 0 auto;
+    width: 120px;
+}
+.greater {
+  padding: 10px;
+  border-radius: 6%;
+}
+.cps a {
+  text-decoration: none;
+  color: black;
+  font-size: 13px;
+}
+#figure-container::-webkit-scrollbar {
+  height: 1px;
+}
+#figure-container::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 10px;
+}
+#figure-container::-webkit-scrollbar-thumb {
+  background: rgba(100, 100, 100, 0.4);
+  border-radius: 10px;
+}
+#commendations{
+    gap: 16px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    padding: 1rem;
-    gap: 1rem;
+    grid-template-columns: repeat(4, 1fr);
 }
-.book-card{
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    color: #fff;
+.book img{
+    max-width: 150px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
 }
-.book-card img{
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
+@media (max-width: 992px){
+    #commendations{
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
-#add{
-    padding: 1rem;
+@media (max-width: 576px){
+    #commendations{
+        grid-template-columns: 1fr;
+    }
 }
