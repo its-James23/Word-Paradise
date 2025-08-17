@@ -1,3 +1,4 @@
+import { setInHistory } from "./utility.js";
 window.addEventListener("load", function () {
   setTimeout(() => {
     let h4 = document.querySelector(".book-container h4");
@@ -16,14 +17,16 @@ const faveGenres = JSON.parse(localStorage.getItem("genres") || "[]");
 fetch("https://gutendex.com/books?page_size=76487")
   .then((response) => response.json())
   .then((data) => {
-    const filteredFaves = faveGenres.flatMap(book => {
-      return data.results.filter(aGenre =>
-        aGenre.subjects.some(one => 
-           one.toLowerCase().includes(book.toLowerCase())
+    const filteredFaves = faveGenres.flatMap((book) => {
+      return data.results
+        .filter((aGenre) =>
+          aGenre.subjects.some((one) =>
+            one.toLowerCase().includes(book.toLowerCase())
+          )
         )
-      ).slice(0, 1)
-    })
-    loadGenres(filteredFaves)
+        .slice(0, 1);
+    });
+    loadGenres(filteredFaves);
     const romanceBook = data.results
       .filter((book) =>
         book.subjects.some((one) => {
@@ -66,13 +69,13 @@ fetch("https://gutendex.com/books?page_size=76487")
     category1.forEach((c) => loadBook(romanceBook, c));
     category2.forEach((c) => loadBook(dramaBook, c));
     category3.forEach((c) => loadBook(fantasyBook, c));
-    function loadGenres(favorites){
-      favorites.forEach(oneBook =>{
-        let span = document.createElement("span")
-        span.className = "badge bg-light shadow-sm p-3 text-dark kool-aid"
-        span.innerText = oneBook.title
-        document.getElementById("genre-books").appendChild(span)
-      })
+    function loadGenres(favorites) {
+      favorites.forEach((oneBook) => {
+        let span = document.createElement("span");
+        span.className = "badge bg-light shadow-sm p-3 text-dark kool-aid";
+        span.innerText = oneBook.title;
+        document.getElementById("genre-books").appendChild(span);
+      });
     }
   });
 let identifier = localStorage.getItem("username") || "User";
@@ -133,11 +136,14 @@ fetch("https://gutendex.com/books?sort=download_count")
         filtrate.formats["text/html; charset=utf-8"] ||
         filtrate.formats["application/epub+zip"] ||
         filtrate.formats["text/plain; charset=utf-8"];
-      let li = filtrate.subjects.map((li) => `<li>${li}</li>`).slice(0,5).join("");
+      let li = filtrate.subjects
+        .map((li) => `<li>${li}</li>`)
+        .slice(0, 5)
+        .join("");
       let absorb = document.createElement("div");
       let rer = filtrate.title;
-      if(filtrate.title.split(" ").length > 28 ){
-        rer = filtrate.title.split(" ").slice(0, 3).join(" ")
+      if (filtrate.title.split(" ").length > 28) {
+        rer = filtrate.title.split(" ").slice(0, 3).join(" ");
       }
       let hula;
       if (index === 0) {
@@ -154,19 +160,17 @@ fetch("https://gutendex.com/books?sort=download_count")
         <div class="col-7">
           <h3 class="display-6 heroine">${rer}</h3>
           <ul>${li}</ul>
-          <a class="btn btn-outline-info" href="${url}" download> Download</a>
+          <a class="btn btn-outline-info saved" href="${url}" download> Download</a>
         </div>
         </div>
       `;
+      let button = absorb.querySelector(".saved")
+      button.addEventListener("click", () => setInHistory(filtrate))
       document.getElementById("lots").appendChild(absorb);
     });
   });
-  const categoryNames = [
-    "romance",
-    "fantasy",
-    "action",
-    "drama"
-  ]
-  const randomCategory = categoryNames[Math.floor(Math.random() * categoryNames.length)]
-  const aLink = document.getElementById("buster")
-  aLink.href = `../category.html?name=${randomCategory}`
+const categoryNames = ["romance", "fantasy", "action", "drama"];
+const randomCategory =
+  categoryNames[Math.floor(Math.random() * categoryNames.length)];
+const aLink = document.getElementById("buster");
+aLink.href = `../category.html?name=${randomCategory}`;
