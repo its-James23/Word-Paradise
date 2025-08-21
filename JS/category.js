@@ -33,13 +33,12 @@ function loadBooks(book) {
       bookDiv.innerHTML = `
         <img src="${url}" onerror="this.onerror=null; this.src='https://picsum.photos/150/200';"  alt="${rest}"/>
         <p class="small text-center">${rest}</p>
+        <span class="position-absolute visually-hidden top-0 start-100 translate-middle love badge rounded-pill bg-danger">
+            <span class="visually-hidden">Faves</span>
+        </span>
         <div class="d-inline-flex justify-content-between align-items-center w-100 bottom-0">
           <a href="${downloadUrl}" class="btn btn-primary germinate" download>Download</a>
           <button class="btn btn-outline-danger d-flex align-items-center gap-1 faves" data-id="${page.id}"> <i class="bi bi-heart"></i><span>Favorite</span></button>
-            <span class="position-absolute visually-hidden top-0 start-100 translate-middle love badge rounded-pill bg-danger">
-                <i class="bi bi-heart-fill"></i>
-                <span class="visually-hidden">Faves</span>
-            </span>
         </div>
     `;
       let btn = bookDiv.querySelector(".germinate");
