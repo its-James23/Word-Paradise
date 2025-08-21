@@ -97,7 +97,7 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.book .germinate {
+/* .book .germinate {
   position: absolute;
   bottom: 5%;
   margin-top: auto;
@@ -107,16 +107,16 @@
   z-index: 2;
   opacity: 0;
   transition: opacity 0.3s ease, visibility 0.3s ease;
-}
+} */
 .book:hover {
   transform: scale(1.05);
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
 }
-.book:hover .germinate {
+/* .book:hover .germinate {
   visibility: visible;
-  /* transform: translateY(-8px); */
+  transform: translateY(-8px);
   opacity: 1;
-}
+} */
 .book p {
   position: relative;
   z-index: 1;
