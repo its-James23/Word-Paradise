@@ -16,7 +16,7 @@ export function setInFavorites(bookInfo, button1) {
     title: bookInfo.title,
     author: bookInfo.authors?.[0]?.name || "Unknown Author",
   };
-  let span = button1.parentElement.querySelector(".love");
+  let span = button1.closest(".book").querySelector(".love");
   let index = favorites.findIndex((best) => best.id === bookInfo.id);
   if (index === -1) {
     console.log("saved to favorites");

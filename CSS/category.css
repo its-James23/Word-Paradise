@@ -136,11 +136,11 @@
     transform: translateY(0);
   }
 }
-.love-anim{
-  display: inline-block;
-  will-change: transform;
+.love{
+  top: 10px;
+  right: 10px;
 }
-.love-anim.pop{
+.pop{
   animation: pop 300ms cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
 }
 @keyframes pop {
@@ -148,6 +148,6 @@
     transform: scale(1);
   }
   50%{
-    transform: scale(2);
+    transform: scale(1.8);
   }
 }
