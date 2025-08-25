@@ -33,7 +33,7 @@ function loadBooks(book) {
       bookDiv.innerHTML = `
         <img src="${url}" onerror="this.onerror=null; this.src='https://picsum.photos/150/200';"  alt="${rest}"/>
         <p class="small text-center">${rest}</p>
-        <span class="position-absolute visually-hidden translate-middle love badge rounded-pill bg-danger">
+        <span class="position-absolute visually-hidden translate-middle love badge bg-danger">
             <i class="bi bi-heart"></i>
             <span class="visually-hidden">Faves</span>
         </span>
@@ -55,3 +55,7 @@ function loadBooks(book) {
       '<p class="text-danger lead text-center"> Category not found</p>';
   }
 }
+const backButton = document.getElementById("back-button")
+backButton.addEventListener("click", () => {
+  window.open("dashboard.html", "_self");
+})

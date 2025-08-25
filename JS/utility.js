@@ -15,26 +15,23 @@ export function setInFavorites(bookInfo, button1) {
     id: bookInfo.id,
     title: bookInfo.title,
     author: bookInfo.authors?.[0]?.name || "Unknown Author",
+    date: new Date().toISOString()
   };
   let span = button1.closest(".book").querySelector(".love");
   let index = favorites.findIndex((best) => best.id === bookInfo.id);
   if (index === -1) {
     console.log("saved to favorites");
     favorites.unshift(faveStore);
+    console.log(favorites)
     localStorage.setItem("favorites", JSON.stringify(favorites));
     span.classList.remove("visually-hidden");
     button1.querySelector("i").className = "bi bi-heart-fill";
-    replayAnimation(span, "pop")
   } else {
     console.log("removed from favorites");
     favorites.splice(index, 1);
+    console.log(favorites)
     localStorage.setItem("favorites", JSON.stringify(favorites));
     span.classList.add("visually-hidden");
     button1.querySelector("i").className = "bi bi-heart";
   }
-}
-function replayAnimation(element, animation){
-  element.classList.remove(animation)
-  void element.offsetWidth
-  element.classList.add(animation)
 }
