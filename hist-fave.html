@@ -14,24 +14,51 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
     />
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-    <link rel="stylesheet" href="./CSS/hist-fave.css">
+    <!-- <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script> -->
+    <link rel="stylesheet" href="./CSS/hist-fave.css" />
   </head>
   <body>
     <header id="high-text" class="mb-5">
-        <h1 class="display-5 fw-bold text-center">Reading History</h1>
+      <h1 class="display-5 fw-bold text-center">Reading History</h1>
     </header>
     <section class="my-5 container-lg" id="lua">
-        <h2 class="display-6">Downloads</h2>
-        <div class="row row-cols-md-3 row-cols-sm-2 row-cols-lg-4 row-cols-1" id="history-section"></div>
+      <h2 class="display-6">Downloads</h2>
+      <div
+        class="row row-cols-md-3 row-cols-sm-2 row-cols-lg-4 row-cols-1"
+        id="history-section"
+      ></div>
     </section>
-    <section class="my-5 container-lg">
-        <div class="row row-cols-md-3 row-cols-sm-2 row-cols-lg-4 row-cols-1" id="favorite-section"></div>
+    <section class="my-5 container-lg" id="helios">
+      <h2 class="display-6">Favorites</h2>
+      <div
+        class="row row-cols-md-3 row-cols-sm-2 row-cols-lg-4 row-cols-1"
+        id="favorite-section"
+      ></div>
+    </section>
+    <section id="streak">
+      <div id="animation" role="button">
+        <dotlottie-wc
+          src="https://lottie.host/66665b76-a38b-421f-ab8d-3b56e19014a1/4qyGQeWWPw.lottie"
+          style="width: 70px; height: 70px"
+          speed="1"
+          autoplay
+          loop
+        ></dotlottie-wc>
+      </div>
+      <div id="contain-streak" class="visually-hidden">
+        <h4>Reading Streak 📚</h4>
+        <p id="text-streak"></p>
+        <p class="small" id="encourage"></p>
+      </div>
     </section>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
       crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.6.2/dist/dotlottie-wc.js"
+      type="module"
     ></script>
     <script src="./JS/hist-fave.js"></script>
   </body>

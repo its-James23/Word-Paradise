@@ -35,3 +35,23 @@ section h2{
     border-left: 5px solid #2193b0;
     padding-left: 14px;
 }
+#streak{
+    position: fixed;
+    right: 5%;
+    bottom: 40px;
+}
+#animation{
+    border-radius: 10px;
+    height: fit-content;
+    width: fit-content;
+    background: cornsilk;
+}
+#contain-streak{
+    border-radius: 9.5px;;
+    background: linear-gradient(to bottom right, #fff, #ebebeb);
+    padding: 1rem;
+    margin: 14px 0;
+}
+.hippie{
+    color: #555;
+}
