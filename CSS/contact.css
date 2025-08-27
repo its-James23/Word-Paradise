@@ -1,0 +1,54 @@
+#blue {
+  background-color: blue;
+  border: 2px solid blue;
+  transition:box-shadow ease 0.3s;
+  color: white;
+}
+#grey {
+  background-color: gainsboro;
+  transition:box-shadow ease 0.3s;
+  border: 2px solid gainsboro;
+  color: rgb(82, 82, 82);
+}
+#blue:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 5px 11px rgba(0, 0, 255, 0.3);
+}
+#grey:hover {
+  transition: ease 0.3s;
+  transform: translateY(-6px);
+  box-shadow: 0 5px 11px rgba(82, 82, 82, 0.3);
+}
+.request {
+  padding: 0.4rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  width: 6.9rem;
+  border-radius: 3px;
+  margin-left: 13px;
+}
+form{
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 9px;
+}
+h1{
+    color: #1e3a8a;
+    margin-bottom: 1rem;
+}
+.lead{
+    color: #64748b;
+}
+form .form-control{
+    border: 2px solid #e2e8f0;
+    transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+form .form-control:focus{
+    border-color: #3b82f6;
+    box-shadow: 0 0 8px rgba(59, 130, 246, 0.4);
+}
+section{
+    background: linear-gradient(135deg, #f0f7ff, #ffffff);
+    padding: 3rem 1rem;
+    border-radius: 12px;
+}

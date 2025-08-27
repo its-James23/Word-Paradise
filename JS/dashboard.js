@@ -1,4 +1,22 @@
 import { setInHistory } from "./utility.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
+
+import {
+  getAuth,
+  signOut,
+} from "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
+const firebaseConfig = {
+  apiKey: "AIzaSyA-M34pq8rztRf_s5M9TnVo9bRsLn3vVgo",
+  authDomain: "paradiso-57343.firebaseapp.com",
+  projectId: "paradiso-57343",
+  storageBucket: "paradiso-57343.appspot.com",
+  messagingSenderId: "335140844141",
+  appId: "1:335140844141:web:a2a35e9732604665a18564",
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+
 window.addEventListener("load", function () {
   setTimeout(() => {
     let h4 = document.querySelector(".book-container h4");
@@ -96,11 +114,19 @@ if (toastTrigger) {
     toastBootstrap.show();
   });
 }
-function replaceData() {
-  localStorage.removeItem("username");
-  localStorage.removeItem("mail");
-  localStorage.removeItem("genres");
+let logoutLink = document.querySelector("#logout");
+function replaceData(event) {
+  event.preventDefault()
+  const auth = getAuth(app)
+  signOut(auth)
+    .then(() => {
+      console.log("Working on it")
+      localStorage.clear()
+      window.open("./sign-up.html", "_self")
+    })
+    .catch(err => console.log("Error alert", err))
 }
+logoutLink.addEventListener("click", replaceData)
 const i = document.getElementById("onoff");
 i.addEventListener("click", function () {
   i.classList.toggle("bi-bell-fill");
