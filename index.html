@@ -14,8 +14,9 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
     />
+    
     <link rel="stylesheet" href="./CSS/styles.css" />
-    <link rel="stylesheet" href="./CSS/all.css">
+    <link rel="stylesheet" href="./CSS/all.css" />
   </head>
   <body>
     <header class="py-3">
@@ -43,7 +44,12 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="./index.html"
+                  >Home</a
+                >
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="./contact.html">Contact</a>
@@ -53,7 +59,9 @@
               </li>
             </ul>
             <div class="d-flex">
-              <button onclick="openhere()" class="request" id="grey">REGISTER</button>
+              <button onclick="openhere()" class="request" id="grey">
+                REGISTER
+              </button>
               <button class="request" id="blue">LOGIN</button>
             </div>
           </div>
@@ -64,65 +72,104 @@
       <div class="row justify-content-center align-items-center">
         <div class="col-md-6 text-center text-md-start">
           <h1 class="display-4 fw-bold">Welcome to Word Paradise</h1>
-          <p id="opop">Your free library of timeless classics. Search, discover, and download books to build your personal collection.</p>
+          <p id="opop">
+            Your free library of timeless classics. Search, discover, and
+            download books to build your personal collection.
+          </p>
         </div>
-        <div class="col-md-5 text-center d-flex justify-content-center align-items-center flow">
-          <input type="text" name="search" id="search" placeholder="WHAT ARE YOU SEARCHING FOR?" />
-          <button class="btn btn-light" onclick="fetchBook()"><i class="bi bi-search"></i></button>
+        <div
+          class="col-md-5 text-center d-flex justify-content-center align-items-center flow"
+        >
+          <input
+            type="text"
+            name="search"
+            id="search"
+            placeholder="WHAT ARE YOU SEARCHING FOR?"
+          />
+          <button class="btn btn-light" onclick="fetchBook()">
+            <i class="bi bi-search"></i>
+          </button>
         </div>
       </div>
     </section>
     <section class="my-5 container-xxl bg-light" id="book-container">
-        <div class="raar">
-            <div>
-                <img src="https://www.gutenberg.org/cache/epub/1342/pg1342.cover.medium.jpg" alt="pride&prejudice">
-                <span class="text-muted mt-2 d-block">Pride and Prejudice</span>
-                <small class="text-muted mt-2">Jane Austen</small>
-            </div>
-            <div>
-                <img src="https://www.gutenberg.org/cache/epub/11/pg11.cover.medium.jpg" alt="">
-                <span class="text-muted mt-2 d-block">Alice in Wonderland</span>
-                <small class="text-muted mt-2">Lewis Caroll</small>
-            </div>
-            <div>
-                <img src="https://www.gutenberg.org/cache/epub/345/pg345.cover.medium.jpg" alt="">
-                <span class="text-muted mt-2  d-block">Dracula</span>
-                <small class="text-muted mt-2">Bram Stoker</small>
-            </div>
-            <div>
-                <img src="https://www.gutenberg.org/cache/epub/1661/pg1661.cover.medium.jpg" alt="">
-                <span class="text-muted mt-2  d-block">Sherlock Holmes</span>
-                <small class="text-muted mt-2">A. Conan Doyle</small>
-            </div>
-            <div>
-                <img src="https://www.gutenberg.org/cache/epub/98/pg98.cover.medium.jpg" alt="">
-                <span class="text-muted mt-2  d-block ">A Tale of Two Cities</span>
-                <small class="text-muted mt-2">Charles Dickens</small>
-            </div>
-            <div>
-                <img src="https://www.gutenberg.org/cache/epub/2701/pg2701.cover.medium.jpg" alt="">
-                <span class="text-muted mt-2 d-block">Moby Dick</span>
-                <small class="text-muted mt-2">Herman Melville</small>
-            </div>
-            <div>
-                <img src="https://www.gutenberg.org/cache/epub/821/pg821.cover.medium.jpg" alt="">
-                <span class="text-muted mt-2 d-block">Dombey and Son</span>
-                <small class="text-muted mt-2">Charles Dickens</small>
-            </div>
-            <div>
-                <img src="https://www.gutenberg.org/cache/epub/1937/pg1937.cover.medium.jpg" alt="">
-                <span class="text-muted mt-2 d-block">Jungle Book</span>
-                <small class="text-muted mt-2">Richyard Kipling</small>
-            </div>
-            <div>
-                <img src="https://www.gutenberg.org/cache/epub/640/pg640.cover.medium.jpg" alt="">
-                <span class="text-muted mt-2 d-block">Yellow Fairy</span>
-                <small class="text-muted mt-2">Andrew Lang</small>
-            </div>
+      <div class="raar">
+        <div>
+          <img
+            src="https://www.gutenberg.org/cache/epub/1342/pg1342.cover.medium.jpg"
+            alt="pride&prejudice"
+          />
+          <span class="text-muted mt-2 d-block">Pride and Prejudice</span>
+          <small class="text-muted mt-2">Jane Austen</small>
         </div>
+        <div>
+          <img
+            src="https://www.gutenberg.org/cache/epub/11/pg11.cover.medium.jpg"
+            alt=""
+          />
+          <span class="text-muted mt-2 d-block">Alice in Wonderland</span>
+          <small class="text-muted mt-2">Lewis Caroll</small>
+        </div>
+        <div>
+          <img
+            src="https://www.gutenberg.org/cache/epub/345/pg345.cover.medium.jpg"
+            alt=""
+          />
+          <span class="text-muted mt-2 d-block">Dracula</span>
+          <small class="text-muted mt-2">Bram Stoker</small>
+        </div>
+        <div>
+          <img
+            src="https://www.gutenberg.org/cache/epub/1661/pg1661.cover.medium.jpg"
+            alt=""
+          />
+          <span class="text-muted mt-2 d-block">Sherlock Holmes</span>
+          <small class="text-muted mt-2">A. Conan Doyle</small>
+        </div>
+        <div>
+          <img
+            src="https://www.gutenberg.org/cache/epub/98/pg98.cover.medium.jpg"
+            alt=""
+          />
+          <span class="text-muted mt-2 d-block">A Tale of Two Cities</span>
+          <small class="text-muted mt-2">Charles Dickens</small>
+        </div>
+        <div>
+          <img
+            src="https://www.gutenberg.org/cache/epub/2701/pg2701.cover.medium.jpg"
+            alt=""
+          />
+          <span class="text-muted mt-2 d-block">Moby Dick</span>
+          <small class="text-muted mt-2">Herman Melville</small>
+        </div>
+        <div>
+          <img
+            src="https://www.gutenberg.org/cache/epub/821/pg821.cover.medium.jpg"
+            alt=""
+          />
+          <span class="text-muted mt-2 d-block">Dombey and Son</span>
+          <small class="text-muted mt-2">Charles Dickens</small>
+        </div>
+        <div>
+          <img
+            src="https://www.gutenberg.org/cache/epub/1937/pg1937.cover.medium.jpg"
+            alt=""
+          />
+          <span class="text-muted mt-2 d-block">Jungle Book</span>
+          <small class="text-muted mt-2">Richyard Kipling</small>
+        </div>
+        <div>
+          <img
+            src="https://www.gutenberg.org/cache/epub/640/pg640.cover.medium.jpg"
+            alt=""
+          />
+          <span class="text-muted mt-2 d-block">Yellow Fairy</span>
+          <small class="text-muted mt-2">Andrew Lang</small>
+        </div>
+      </div>
     </section>
     <footer class="bottom-0">
-        <p class="lead">&copy; 2025 Word Paradise</p>
+      <p class="lead">&copy; 2025 Word Paradise</p>
     </footer>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
