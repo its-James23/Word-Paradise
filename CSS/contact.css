@@ -1,12 +1,12 @@
 #blue {
   background-color: blue;
   border: 2px solid blue;
-  transition:box-shadow ease 0.3s;
+  transition:box-shadow ease 0.3s, transform ease 0.3s;
   color: white;
 }
 #grey {
   background-color: gainsboro;
-  transition:box-shadow ease 0.3s;
+  transition:box-shadow ease 0.3s, transform ease 0.3s;
   border: 2px solid gainsboro;
   color: rgb(82, 82, 82);
 }

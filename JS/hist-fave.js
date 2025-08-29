@@ -30,12 +30,29 @@ if (favoriteItems && favoriteItems.length > 0) {
     let merci = anotherDate.toDateString();
     let faveImgUrl = `https://www.gutenberg.org/cache/epub/${faves.id}/pg${faves.id}.cover.medium.jpg`;
     let faveDiv = document.createElement("div");
-    faveDiv.className = "hitory-item col";
+    faveDiv.className = "history-item col";
     faveDiv.innerHTML = `
-      <img src="${faveImgUrl} onerror="this.onerror=null; this.src='https://picsum.photos/150/200';" alt="${faves.title}" />
+      <img src="${faveImgUrl}" onerror="this.onerror=null; this.src='https://picsum.photos/150/200';" alt="${faves.title}" />
       <h3 class="text-center">${faves.author}</h3>
       <p class="text-center small">${merci}</p>
+      <div class="text-center">
+        <button class="btn btn-outline-danger" data-id="${faves.id}"><i class="bi bi-heart-fill"></i> Remove</button>
+      </div>
     `;
+    let removeBtn = faveDiv.querySelector("button")
+    removeBtn.addEventListener("click", () =>{
+      let index = favoriteItems.findIndex(liked => liked.id === faves.id);
+      if(index !== -1){
+        favoriteItems.splice(index, 1);
+        localStorage.setItem("favorites", JSON.stringify(favoriteItems));
+        faveDiv.remove();
+        faveDiv.innerHTML = `
+          <h2 class="display-6">Favorites</h2>
+          <p class="text-center">No Favorites...yet.</p>
+          <span class="d-block text-center hippie">Start Reading now 💖</span>
+          `
+      }
+    })
     favoriteSection.appendChild(faveDiv);
   });
 } else {
@@ -59,5 +76,10 @@ if (!historyItems || historyItems.length === 0) {
   remark.textContent =
     "You can do better than that! Start downloading to get that streak up.";
 } else {
-  remark.textContent = `Keep up the good work. Aim for ${historyItems.length++} books`;
+  remark.textContent = `Keep up the good work. Aim for ${historyItems.length + 1} books`;
 }
+
+const backBtn = document.querySelector("#back-button")
+backBtn.addEventListener("click", () =>{
+  window.open("./dashboard.html", "_self")
+})

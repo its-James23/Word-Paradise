@@ -1,0 +1,23 @@
+#profile{
+    background: linear-gradient(135deg, #e0eafc, #cfdef3);
+    padding: 2rem 15px ;
+    border-radius: 12px;
+}
+.stuff{
+    background-color: whitesmoke;
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+#profile-pic{
+    width: 120px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.stuff:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+#stats h4{
+    color: #2c3e50;
+    text-shadow: 0 0 6px rgba(207, 222, 243, 0.7), 0 0 10px rgba(224, 234, 252, 0.5);
+}

@@ -200,3 +200,6 @@ const randomCategory =
   categoryNames[Math.floor(Math.random() * categoryNames.length)];
 const aLink = document.getElementById("buster");
 aLink.href = `../category.html?name=${randomCategory}`;
+document.getElementById("open-profile").addEventListener("click", () =>{
+  window.open("./user-prof.html", "_self")
+})
